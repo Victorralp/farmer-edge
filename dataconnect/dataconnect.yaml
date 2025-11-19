@@ -1,0 +1,13 @@
+specVersion: "v1"
+serviceId: "farmer-edge-feature-nigeria-farmers-market-pwa-firebase-cloudin"
+location: "us-east4"
+schema:
+  source: "./schema"
+  datasource:
+    postgresql:
+      database: "fdcdb"
+      cloudSql:
+        instanceId: "farmer-edge-feature-nigeria-farmers-market-pwa-firebase-cloudin-fdc"
+        # schemaValidation: "STRICT"     # STRICT mode makes Postgres schema match Data Connect exactly.
+        # schemaValidation: "COMPATIBLE" # COMPATIBLE mode makes Postgres schema compatible with Data Connect.
+connectorDirs: ["./example"]

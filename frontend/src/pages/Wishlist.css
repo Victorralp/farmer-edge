@@ -1,0 +1,28 @@
+.wishlist-card {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.wishlist-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15) !important;
+}
+
+.wishlist-card .btn-link {
+  transition: transform 0.2s;
+}
+
+.wishlist-card .btn-link:hover {
+  transform: scale(1.2);
+}
+
+.price-section {
+  border-top: 1px solid #dee2e6;
+  border-bottom: 1px solid #dee2e6;
+  padding: 0.75rem 0;
+}
+
+.notification-preferences {
+  background-color: #f8f9fa;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+}

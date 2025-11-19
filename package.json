@@ -1,0 +1,37 @@
+{
+  "name": "nigeria-farmers-market",
+  "version": "1.0.0",
+  "description": "Full-stack PWA connecting Nigerian farmers with local buyers",
+  "main": "index.js",
+  "scripts": {
+    "install-all": "npm install && cd frontend && npm install && cd ../functions && npm install",
+    "frontend": "cd frontend && npm start",
+    "functions": "cd functions && npm run serve",
+    "dev": "concurrently \"npm run frontend\" \"npm run functions\"",
+    "build": "cd frontend && npm run build",
+    "deploy": "firebase deploy",
+    "test": "echo \"No tests configured yet\" && exit 0"
+  },
+  "keywords": [
+    "farmers",
+    "marketplace",
+    "nigeria",
+    "agriculture",
+    "pwa",
+    "firebase",
+    "cloudinary",
+    "brevo"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "dependencies": {
+    "@dataconnect/generated": "file:src/dataconnect-generated"
+  }
+}

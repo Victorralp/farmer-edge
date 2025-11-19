@@ -1,0 +1,74 @@
+/* Register Page Styles */
+
+.role-card {
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.role-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.role-card.border-success {
+  background-color: rgba(40, 167, 69, 0.05);
+}
+
+/* Google button hover effect */
+.btn-outline-dark:hover svg path {
+  transition: fill 0.3s ease;
+}
+
+/* Form improvements */
+.form-label {
+  font-weight: 500;
+  color: #333;
+}
+
+/* Modal improvements */
+.modal-header {
+  border-bottom: 2px solid #28a745;
+}
+
+.modal-footer {
+  border-top: 1px solid #dee2e6;
+}
+
+/* Profile image in modal */
+.modal-body img.rounded-circle {
+  border: 3px solid #28a745;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Role selection buttons in modal */
+.modal-body .btn {
+  transition: all 0.2s ease;
+}
+
+.modal-body .btn:hover {
+  transform: translateX(5px);
+}
+
+.modal-body .btn-success {
+  box-shadow: 0 2px 8px rgba(40, 167, 69, 0.3);
+}
+
+/* Alert styling */
+.alert {
+  border-left: 4px solid;
+}
+
+.alert-info {
+  border-left-color: #17a2b8;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767.98px) {
+  .role-card {
+    margin-bottom: 1rem;
+  }
+  
+  .modal-body .btn {
+    font-size: 0.9rem;
+  }
+}

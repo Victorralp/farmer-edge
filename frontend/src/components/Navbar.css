@@ -1,0 +1,184 @@
+/* Optimized Navbar Styles */
+
+/* Smooth transitions */
+.navbar {
+  transition: all 0.3s ease;
+}
+
+/* Brand hover effect */
+.navbar-brand {
+  transition: transform 0.2s ease;
+}
+
+.navbar-brand:hover {
+  transform: scale(1.05);
+}
+
+/* Nav link improvements */
+.navbar-nav .nav-link {
+  position: relative;
+  transition: all 0.2s ease;
+  padding: 0.5rem 0.75rem !important;
+  border-radius: 0.25rem;
+  margin: 0 0.125rem;
+}
+
+.navbar-nav .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
+}
+
+.navbar-nav .nav-link.active {
+  background-color: rgba(255, 255, 255, 0.15);
+  font-weight: 500;
+}
+
+/* Dropdown improvements */
+.navbar-nav .dropdown-menu {
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 0.5rem;
+  margin-top: 0.5rem;
+  animation: slideDown 0.2s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.navbar-nav .dropdown-item {
+  padding: 0.625rem 1.25rem;
+  transition: all 0.2s ease;
+}
+
+.navbar-nav .dropdown-item:hover {
+  background-color: #28a745;
+  color: white;
+  transform: translateX(5px);
+}
+
+.navbar-nav .dropdown-item i {
+  width: 20px;
+  text-align: center;
+}
+
+/* Badge positioning */
+.navbar-nav .position-relative .badge {
+  font-size: 0.6rem;
+  padding: 0.2em 0.4em;
+  min-width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Mobile optimizations */
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .navbar-nav .nav-link {
+    padding: 0.75rem 1rem !important;
+    margin: 0.125rem 0;
+  }
+
+  .navbar-nav .dropdown-menu {
+    background-color: rgba(255, 255, 255, 0.95);
+    margin-left: 1rem;
+  }
+}
+
+/* Navbar toggle button */
+.navbar-toggler {
+  border: none;
+  padding: 0.5rem;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Sign up button */
+.btn-light {
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.btn-light:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Dropdown toggle alignment */
+.navbar-nav .dropdown-toggle {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-nav .dropdown-toggle::after {
+  margin-left: 0.5rem;
+}
+
+/* Loading state */
+.navbar-nav .nav-link:disabled,
+.navbar-nav .dropdown-item:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Sticky navbar shadow */
+.navbar.shadow-sm {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Icon spacing */
+.navbar-nav i {
+  font-size: 1.1rem;
+}
+
+/* Responsive text hiding */
+@media (max-width: 1199.98px) {
+  .navbar-nav .nav-link span,
+  .navbar-nav .dropdown-toggle span {
+    display: inline !important;
+  }
+}
+
+/* Account dropdown special styling */
+#account-dropdown + .dropdown-menu {
+  min-width: 200px;
+}
+
+/* Admin dropdown special styling */
+#admin-dropdown + .dropdown-menu {
+  min-width: 180px;
+}
+
+/* Hover effects for icons */
+.navbar-nav .nav-link i,
+.navbar-nav .dropdown-item i {
+  transition: transform 0.2s ease;
+}
+
+.navbar-nav .nav-link:hover i,
+.navbar-nav .dropdown-item:hover i {
+  transform: scale(1.1);
+}

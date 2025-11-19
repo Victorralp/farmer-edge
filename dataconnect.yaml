@@ -1,0 +1,22 @@
+# Firebase Data Connect configuration for the Nigeria Farmers Market project.
+# Update the placeholders to match your Cloud SQL instance and GraphQL schema path
+# before running `firebase deploy --only dataconnect`.
+
+serviceId: farmer-edge
+location: us-central1
+
+connectors:
+  - id: marketplace
+    location: us-central1
+    connectorGeneration: 1
+    database:
+      engine: POSTGRES
+      # Secret that stores the full PostgreSQL connection URI, e.g.
+      # postgres://<USER>:<PASSWORD>@<HOST>:5432/<DATABASE>
+      uriFromSecret: FARMERS_MARKET_DB_URI
+    schema:
+      # Directory containing the GraphQL schema and resolvers for this connector.
+      source: dataconnect/schema
+    runtime:
+      minInstances: 0
+      maxInstances: 2
