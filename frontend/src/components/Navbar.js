@@ -63,7 +63,7 @@ function Navbar({ user }) {
     }
   }, [user, fetchUnreadCount, checkAdminStatus]);
 
-  const handleLogout = async () => {
+  const handleLogout = useCallback(async () => {
     if (isLoading) return;
     
     setIsLoading(true);
@@ -76,10 +76,10 @@ function Navbar({ user }) {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [isLoading, navigate]);
 
   // Helper to check if current route is active
-  const isActive = (path) => location.pathname === path;
+  const isActive = useCallback((path) => location.pathname === path, [location.pathname]);
 
   // Memoize navigation items to prevent re-renders
   const publicNavItems = useMemo(() => (
