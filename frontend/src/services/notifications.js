@@ -1,5 +1,3 @@
-import { toast } from 'react-toastify'
-
 // Notifications are optional - can be enabled later with Firebase Cloud Messaging
 export const setupNotifications = async () => {
   try {

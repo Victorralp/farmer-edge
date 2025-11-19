@@ -75,10 +75,12 @@ export const validateMessageForm = (data) => {
   };
 };
 
-export default {
+const validationUtils = {
   sanitizeString,
   isPositiveNumber,
   validateListingForm,
   validateOrderForm,
   validateMessageForm,
 };
+
+export default validationUtils;

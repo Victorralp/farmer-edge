@@ -25,6 +25,7 @@ function Messages({ user }) {
     setContactsLoading(true);
     fetchConversations();
     fetchContacts();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
 
   const fetchConversations = async () => {

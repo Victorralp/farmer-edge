@@ -17,6 +17,7 @@ function CommunityForum() {
 
   useEffect(() => {
     loadPosts();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedCategory]);
 
   const loadPosts = async () => {
@@ -54,19 +55,7 @@ function CommunityForum() {
     }
   };
 
-  const handleLikePost = async (postId) => {
-    if (!currentUser) {
-      toast.error('Please login to like posts');
-      return;
-    }
 
-    try {
-      await forumService.likePost(postId);
-      loadPosts();
-    } catch (error) {
-      console.error('Error liking post:', error);
-    }
-  };
 
   const getCategoryBadge = (category) => {
     const colors = {

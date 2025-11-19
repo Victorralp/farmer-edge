@@ -27,6 +27,7 @@ function Marketplace() {
 
   useEffect(() => {
     applyFilters();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filters, listings]);
 
   const fetchListings = async () => {

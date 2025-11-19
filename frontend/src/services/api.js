@@ -51,7 +51,7 @@ export const usersAPI = {
 export const adminAPI = {
   getStats: async () => {
     // Get real stats from Firestore
-    const { getFirestore, collection, getDocs, query, where } = await import('firebase/firestore');
+    const { getFirestore, collection, getDocs } = await import('firebase/firestore');
     const db = getFirestore();
     
     const [usersSnap, listingsSnap, ordersSnap] = await Promise.all([

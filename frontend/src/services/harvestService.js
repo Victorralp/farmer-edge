@@ -15,7 +15,7 @@ import {
   Timestamp
 } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
-import { createNotification, NotificationTypes } from './notificationService';
+import { createNotification } from './notificationService';
 
 const db = getFirestore();
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Card, Table, Button, Form } from 'react-bootstrap';
 import { analyticsService } from '../services/analyticsService';
-import { Line, Bar, Pie } from 'react-chartjs-2';
+import { Line, Bar } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -34,23 +34,17 @@ function AnalyticsDashboard() {
   const [topFarmers, setTopFarmers] = useState([]);
   const [geoDistribution, setGeoDistribution] = useState([]);
   const [orderStats, setOrderStats] = useState(null);
-  const [userGrowth, setUserGrowth] = useState([]);
   const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    loadAnalytics();
-  }, [timeRange]);
 
   const loadAnalytics = async () => {
     setLoading(true);
     try {
-      const [trends, products, farmers, geo, stats, growth] = await Promise.all([
+      const [trends, products, farmers, geo, stats] = await Promise.all([
         analyticsService.getSalesTrends(timeRange),
         analyticsService.getTopProducts(10),
         analyticsService.getTopFarmers(10),
         analyticsService.getGeographicDistribution(),
-        analyticsService.getOrderStats(timeRange),
-        analyticsService.getUserGrowth(timeRange)
+        analyticsService.getOrderStats(timeRange)
       ]);
 
       setSalesTrends(trends);
@@ -58,13 +52,18 @@ function AnalyticsDashboard() {
       setTopFarmers(farmers);
       setGeoDistribution(geo);
       setOrderStats(stats);
-      setUserGrowth(growth);
     } catch (error) {
       console.error('Error loading analytics:', error);
     } finally {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    loadAnalytics();
+  }, [timeRange]);
+
+
 
   const salesChartData = {
     labels: salesTrends.map(d => d.date),

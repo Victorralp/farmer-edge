@@ -12,4 +12,5 @@ export const toastError = (toast, error, fallback) => {
   return msg
 }
 
-export default { getErrorMessage, toastError }
+const errorUtils = { getErrorMessage, toastError };
+export default errorUtils;

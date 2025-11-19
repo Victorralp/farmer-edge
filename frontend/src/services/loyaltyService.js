@@ -8,9 +8,7 @@ import {
   updateDoc,
   increment,
   serverTimestamp,
-  getDocs,
-  query,
-  where
+  getDocs
 } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
 
