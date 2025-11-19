@@ -36,30 +36,30 @@ function AnalyticsDashboard() {
   const [orderStats, setOrderStats] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const loadAnalytics = async () => {
-    setLoading(true);
-    try {
-      const [trends, products, farmers, geo, stats] = await Promise.all([
-        analyticsService.getSalesTrends(timeRange),
-        analyticsService.getTopProducts(10),
-        analyticsService.getTopFarmers(10),
-        analyticsService.getGeographicDistribution(),
-        analyticsService.getOrderStats(timeRange)
-      ]);
-
-      setSalesTrends(trends);
-      setTopProducts(products);
-      setTopFarmers(farmers);
-      setGeoDistribution(geo);
-      setOrderStats(stats);
-    } catch (error) {
-      console.error('Error loading analytics:', error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
   useEffect(() => {
+    const loadAnalytics = async () => {
+      setLoading(true);
+      try {
+        const [trends, products, farmers, geo, stats] = await Promise.all([
+          analyticsService.getSalesTrends(timeRange),
+          analyticsService.getTopProducts(10),
+          analyticsService.getTopFarmers(10),
+          analyticsService.getGeographicDistribution(),
+          analyticsService.getOrderStats(timeRange)
+        ]);
+
+        setSalesTrends(trends);
+        setTopProducts(products);
+        setTopFarmers(farmers);
+        setGeoDistribution(geo);
+        setOrderStats(stats);
+      } catch (error) {
+        console.error('Error loading analytics:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
     loadAnalytics();
   }, [timeRange]);
 

@@ -104,7 +104,7 @@ function Navbar({ user }) {
         <span className="d-none d-lg-inline">Community</span>
       </Nav.Link>
     </>
-  ), [location.pathname, isActive]);
+  ), [isActive]);
 
   const authenticatedNavItems = useMemo(() => {
     if (!user) return null;
@@ -198,7 +198,7 @@ function Navbar({ user }) {
         </NavDropdown>
       </>
     );
-  }, [user, unreadCount, isAdmin, isLoading, location.pathname, isActive, handleLogout]);
+  }, [user, unreadCount, isAdmin, isLoading, isActive, handleLogout]);
 
   const guestNavItems = useMemo(() => {
     if (user) return null;
