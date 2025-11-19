@@ -8,7 +8,7 @@
     "frontend": "cd frontend && npm start",
     "functions": "cd functions && npm run serve",
     "dev": "concurrently \"npm run frontend\" \"npm run functions\"",
-    "build": "cd frontend && npm run build",
+    "build": "cd frontend && npm install && npm run build",
     "deploy": "firebase deploy",
     "test": "echo \"No tests configured yet\" && exit 0"
   },
